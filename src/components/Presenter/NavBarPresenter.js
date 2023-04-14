@@ -25,6 +25,11 @@ border-right: solid 1px #DBDBDB;
 const Header = styled.div`
 height: 92px;
 width: 100%;
+display: blobk;
+> a {
+    height: 36px;
+    width: 287px;
+}
 `
 
 const ImageBox = styled.div`
@@ -35,8 +40,22 @@ padding-right: 12px;
 padding-bottom: 14px;
 padding-left: 9px;
 display: flex;
-> svg {
+&:hover {
+    cursor: pointer;
+}
+> a {
+    height: 100%;
+    width: 100%;
+}
+svg {
+    height: 24px;
+    width: 24px;
     display: none;
+}
+
+img {
+    width: 109px;
+    height: 39px;
 }
 
 @media screen and (max-width: 1919px){
@@ -59,7 +78,7 @@ display: flex;
 const Menu = styled.div`
 height: 793px;
 width: 100%;
-    > div:first-child > div {
+    div:first-child > div {
         font-weight: bold;
     }
 `
@@ -75,11 +94,22 @@ padding-bottom: 14px;
 margin-top: 4px;
 margin-bottom: 4px;
 border-radius: 10px;
-&:hover {
-    background-color: #F2F2F2;
-}
+transition: transform 0.2s ease-in-out;
 > div {
     padding-left: 16px;
+}
+> img, svg {
+    height: 24px;
+    width: 24px;
+    transition: transform 0.2s ease-in-out;
+}
+
+&:hover{
+    background-color: #F2F2F2;
+    > img, svg {
+        transform: scale(1.1);
+    }
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1919px){
@@ -106,8 +136,18 @@ border-radius: 10px;
     padding-left: 16px;
 }
 
+> svg {
+    height: 24px;
+    width: 24px;
+    transition: transform 0.2s ease-in-out;
+}
+
 &:hover {
     background-color: #F2F2F2;
+    > svg {
+        transform: scale(1.1);
+    }
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1919px){

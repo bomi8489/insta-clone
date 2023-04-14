@@ -10,59 +10,57 @@ import {
     NavBarBox 
 } from '../Presenter/NavBarPresenter';
 import { MdHomeFilled } from "react-icons/md";
-import { BiSearch } from 'react-icons/bi';
+import { BiSearch, BiMoviePlay } from 'react-icons/bi';
 import { FaRegCompass } from 'react-icons/fa';
-import { BiMoviePlay } from 'react-icons/bi';
 import { FiSend, FiHeart, FiPlusSquare } from 'react-icons/fi';
 import { HiOutlineMenu } from 'react-icons/hi';
 import { BsInstagram } from 'react-icons/bs';
 
-
-function NavBar() {
+const NavBar = () => {
     return (
         <NavBarBox>
             <Header>
                 <ImageBox>
-                    <BsInstagram size={24}/>
-                    <img src={`${instagram}`} width='109px' height='39px' alt='instagram'/>
+                    <BsInstagram/>
+                    <img src={`${instagram}`} alt='instagram'/>
                 </ImageBox>
             </Header>
             <Menu>
                 <MenuContents>
-                    <MdHomeFilled size="24"/>
+                    <MdHomeFilled/>
                     <div>홈</div>
                 </MenuContents>
                 <MenuContents>
-                    <BiSearch size="24"/>
+                    <BiSearch/>
                     <div>검색</div>
                 </MenuContents>
                 <MenuContents>
-                    <FaRegCompass size="24"/>
+                    <FaRegCompass/>
                     <div>탐색 탭</div>
                 </MenuContents>
                 <MenuContents>
-                    <BiMoviePlay size="24"/>
+                    <BiMoviePlay/>
                     <div>릴스</div>
                 </MenuContents>
                 <MenuContents>
-                    <FiSend size="24"/>
+                    <FiSend/>
                     <div>메시지</div>
                 </MenuContents>
                 <MenuContents>
-                    <FiHeart size="24"/>
+                    <FiHeart/>
                     <div>알림</div>
                 </MenuContents>
                 <MenuContents>
-                    <FiPlusSquare size="24"/>
+                    <FiPlusSquare/>
                     <div>만들기</div>
                 </MenuContents>
                 <MenuContents>
-                    <img src={`${instaProfile}`} height="24px" width="24px" alt='profile'/>
+                    <img src={`${instaProfile}`} alt='profile'/>
                     <div>프로필</div>
                 </MenuContents>
             </Menu>
             <More>
-                <HiOutlineMenu size={24} />
+                <HiOutlineMenu/>
                 <div>더 보기</div>
             </More>
         </NavBarBox>
