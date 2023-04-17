@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const MainBox = styled.div`
 margin-left: 336px;
-height: 100vh;
+height: 100%;
 width: 100% - 336px;
 background-color: white;
 
@@ -18,7 +18,7 @@ background-color: white;
 `
 
 const Contents = styled.div`
-height: 100vh;
+height: 100%;
 width: 1013px;
 display: flex;
 padding-top: 4px;

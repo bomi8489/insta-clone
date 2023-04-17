@@ -23,14 +23,14 @@ const StoryComponent = () => {
     const leftBtnRef = useRef();
     const rightBtnRef = useRef();
 
-    const clickLeftBtn = (e) => {
+    const clickLeftBtn = () => {
         if(position > -320) {
             setPosition(0);
         }
         else setPosition(prev => prev + 320);
     }
 
-    const clickRightBtn = (e) => {
+    const clickRightBtn = () => {
         if(position <= -640) {
             setPosition(-800)
         }
@@ -39,6 +39,12 @@ const StoryComponent = () => {
 
     useEffect(() => {
         rightBtnRef.current.parentNode.children[2].style = `
+        transition: transform 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 0s; transform: translateX(${position}px);
+        `;
+    },[position])
+
+        useEffect(() => {
+        leftBtnRef.current.parentNode.children[2].style = `
         transition: transform 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 0s; transform: translateX(${position}px);
         `;
     },[position])
