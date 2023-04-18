@@ -52,7 +52,7 @@ const FeedContent = ({user, testComments, picture}) => {
                 <LikeContainer><span>{user[2]}</span>이 좋아합니다</LikeContainer>
                 <CommentsContainer>
                     <div>
-                        <span>{user[0]}</span> <span>test 피드입니다</span>
+                        <span>{user[0]}</span> <span>군침 싹 도네</span>
                     </div>
                     {testComments.length > 1 && <MoreComment>댓글 {testComments.length}개 모두 보기</MoreComment>}
                     <CommentBox>
