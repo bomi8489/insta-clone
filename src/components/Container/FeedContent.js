@@ -24,8 +24,14 @@ import Comment from './Comment';
 import FeedLikeBtn from './FeedLikeBtn';
 import FeedPhoto from './FeedPhoto';
 import WriteComponent from './WriteComponent';
+import { useState } from 'react';
 
 const FeedContent = ({user, testComments, picture}) => {
+    const [likeBtn, setLikeBtn] = useState(false);
+
+    const onLikeClick = () => {
+        setLikeBtn(prev => !prev);
+    }
 
     return (
         <Feed>
@@ -43,8 +49,8 @@ const FeedContent = ({user, testComments, picture}) => {
                 <FeedPhoto picture={picture}/>
             </FeedPicture>
             <FeedFooter>
-                <IconsContainer>
-                    <div><FeedLikeBtn /></div>
+                <IconsContainer likeBtn={likeBtn}>
+                    <div><FeedLikeBtn likeBtn={likeBtn} onLikeClick={onLikeClick}/></div>
                     <div><FaRegComment style={{transform: 'scaleX(-1)'}}/></div>
                     <div><FiSend /></div>
                     <div><RiBookmarkLine /></div>

@@ -1,13 +1,7 @@
 import React from 'react'
-import { useState } from 'react';
 import {FaHeart, FaRegHeart} from 'react-icons/fa'
 
-function FeedLikeBtn() {        
-    const [likeBtn, setLikeBtn] = useState(false);
-
-    const onLikeClick = () => {
-        setLikeBtn(prev => !prev);
-    }
+function FeedLikeBtn({likeBtn, onLikeClick}) {
     return (
         <>
             <div onClick={onLikeClick}>
