@@ -95,6 +95,25 @@ opacity: 0.5;
 const FeedPicture = styled.div`
 height: 587px;
 border: solid 1px;
+overflow: hidden;
+position: relative;
+border-radius: 5px;
+border: none;
+> div:first-child {
+    top: 50%;
+}
+> div:nth-child(2) {
+    top: 50%;
+}
+img {
+    width: 100%;
+    object-fit: contain;
+}
+`
+
+const PictureBox = styled.div`
+display: flex;
+height: 100%;
 `
 
 const FeedFooter = styled.div`
@@ -111,7 +130,7 @@ display: flex;
 > div {
     height: 40px;
     width: 40px;
-    > svg {
+    svg {
         height: 24px;
         width: 24px;
         padding: 8px;
@@ -128,6 +147,13 @@ display: flex;
     margin-left: 328px;
     margin-right: -10px;
 }
+> div:first-child {
+    svg {
+        &:hover {
+            opacity: ${props => props.likeBtn? '1' : '0.5'};
+        }
+    }
+}
 `
 
 const LikeContainer = styled.div`
@@ -136,13 +162,75 @@ margin-bottom: 8px;
 font-size: 14px;
 > span {
     font-weight: bold;
+    &:hover {
+        cursor: pointer;
+    }
 }
 `
 
 const CommentsContainer = styled.div`
-height: 70px;
 display: flex;
 flex-direction: column;
+> div:first-child {
+    font-size: 14px;
+    margin-bottom: 8px;
+    > span:first-child  {
+        font-weight: bold;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    > span:nth-child(2) {
+        margin-left: 3.8px;
+    }
+}
+`
+
+const Comments = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 14px;
+margin-bottom: 4px;
+
+span {
+    opacity: 0.9;
+}
+
+span:first-child {
+    font-weight: bold;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+span:nth-child(2) {
+    margin-left: 3.8px;
+}
+
+svg {
+    height: 12px;
+    width: 12px;
+    margin-left: 8px;
+    opacity: 0.5;
+    &:hover {
+        cursor: pointer;
+        opacity: 0.2;
+    }
+}
+`
+
+const CommentBox = styled.div`
+margin-bottom: 4px;
+`
+
+const MoreComment = styled.div`
+font-size: 14px;
+opacity: 0.7;
+margin-bottom: 8px;
+&:hover {
+    cursor: pointer;
+}
 `
 
 const WriteComment = styled.div`
@@ -172,4 +260,4 @@ input {
 }
 `
 
-export { MainContentsBox, StoryBox, FeedBox, FeedContainer, Feed, FeedHeader, PictureAndNickname, UserName, UploadTime, FeedPicture, FeedFooter, IconsContainer, LikeContainer, CommentsContainer, WriteComment, };
+export { MainContentsBox, StoryBox, FeedBox, FeedContainer, Feed, FeedHeader, PictureAndNickname, UserName, UploadTime, FeedPicture, PictureBox, FeedFooter, IconsContainer, LikeContainer, CommentsContainer, Comments, CommentBox, MoreComment, WriteComment, };

@@ -27,8 +27,8 @@ const Sidebar = () => {
                     </ProfilePictureBox>
                     <NameAndNicknameBox>
                         <div>
-                            <NickName>kim_water_hwan</NickName>
-                            <div>김수환</div>
+                            <NickName>b.__.omi</NickName>
+                            <div>권기범</div>
                         </div>
                     </NameAndNicknameBox>
                     <ConversionBox>

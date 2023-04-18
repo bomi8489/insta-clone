@@ -7,6 +7,8 @@ import {
 } from '../Presenter/MainContentsPresenter'
 import StoryComponent from './StoryComponent'
 import FeedContent from './FeedContent'
+import loopy from '../image/loopy.png'
+import loopy2 from '../image/loopy2.png'
 
 const MainContents = () => {
   const userPostArray = [
@@ -17,6 +19,15 @@ const MainContents = () => {
     ["Test_User13", "1주", "18명"], ["Test_User14", "2주", "18명"], ["Test_User15", "2주", "18명"],
     ["Test_User16", "3주", "18명"], ["Test_User17", "3주", "18명"], ["Test_User18", "4주", "18명"],
   ];
+
+  const testComments = [
+    ["Kim_Water_Hwan", "사진이 마음에 들어요"], ["Kim_Water_Hwan", "퍼가요"], ["Kim_Water_Hwan", "퍼가요"], ["Kim_Water_Hwan", "싫어요"], ["Kim_Water_Hwan", "김수환바보"], ["Kim_Water_Hwan", "우와"], 
+  ]
+
+  const feedPicture = [
+    loopy, loopy2
+  ]
+
   return (
     <MainContentsBox>
         <div></div>
@@ -26,7 +37,7 @@ const MainContents = () => {
         <FeedBox>
           <FeedContainer>
             {userPostArray.map((user, idx) => (
-              <FeedContent key={idx} user={user} />
+              <FeedContent key={idx} user={user} testComments={testComments} picture={feedPicture}/>
             ))}
           </FeedContainer>
         </FeedBox>
