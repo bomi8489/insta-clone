@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { MenuContents } from '../Presenter/NavBarPresenter'
 
-const NavbarMenuContentComponent = ({iconProp, text}) => {
+const NavbarMenuContentComponent = forwardRef(({searchBtn, iconProp, text, onClick}, ref) => {
     return (
-        <MenuContents>
+        <MenuContents onClick={onClick} searchBtn={searchBtn} ref={ref}>
             {iconProp}
             <div>{text}</div>
         </MenuContents>
     )
-}
+})
 
 export default NavbarMenuContentComponent

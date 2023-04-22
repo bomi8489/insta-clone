@@ -8,6 +8,8 @@ const Comment = ({testComments, idx}) => {
     const commentLikeClick = () => {
         setCommentLikeBtn(prev => !prev)
     }
+
+
     return (
         <>
             <div>

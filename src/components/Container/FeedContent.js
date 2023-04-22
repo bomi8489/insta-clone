@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { 
     Feed, 
     FeedFooter, 
@@ -7,24 +7,23 @@ import {
     UserName,
     UploadTime,
     FeedPicture,
-    IconsContainer, 
-    LikeContainer, 
-    CommentsContainer, 
-    Comments, 
+    IconsContainer,
+    LikeContainer,
+    CommentsContainer,
+    Comments,
     CommentBox,
     MoreComment,
     WriteComment,
 } from '../Presenter/MainContentsPresenter';
 import {RxDotsHorizontal} from 'react-icons/rx';
-import {FiSend} from 'react-icons/fi'
-import {FaRegComment} from 'react-icons/fa'
-import {RiBookmarkLine} from 'react-icons/ri'
+import {FiSend} from 'react-icons/fi';
+import {FaRegComment} from 'react-icons/fa';
+import {RiBookmarkLine} from 'react-icons/ri';
 import instaProfile from '../../image/insta-default-profile2.png';
 import Comment from './Comment';
 import FeedLikeBtn from './FeedLikeBtn';
 import FeedPhoto from './FeedPhoto';
 import WriteComponent from './WriteComponent';
-import { useState } from 'react';
 
 const FeedContent = ({user, testComments, picture}) => {
     const [likeBtn, setLikeBtn] = useState(false);
