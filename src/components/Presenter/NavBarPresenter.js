@@ -93,9 +93,12 @@ img {
 const Menu = styled.div`
 height: 800px;
 width: 100%;
-div:first-child > div {
+> a:first-child > div > div {
     font-weight: bold;
 }
+/* div:first-child > div {
+    font-weight: bold;
+} */
 
 > a > div {
     width: ${props => (props.searchBtn === true) ? '24px' : '287px'};

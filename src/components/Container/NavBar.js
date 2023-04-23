@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useRef, useState, useEffect, forwardRef } from 'react';
 import instagram from '../../image/instagram.png';
 import instaProfile from '../../image/insta-default-profile2.png';
 import {
@@ -20,7 +20,7 @@ import { BsInstagram } from 'react-icons/bs';
 import NavbarMenuContentComponent from './NavbarMenuContentComponent';
 import SearchBar from './SearchBar';
 
-const NavBar = () => {
+const NavBar = forwardRef(({init}, ref) => {
     const [searchBtn, setSearchBtn] = useState(false);
     const searchBarRef = useRef();
     const searchBtnRef = useRef();
@@ -37,10 +37,16 @@ const NavBar = () => {
         if(!searchBarRef.current.contains(e.target) && !searchBtnRef.current.contains(e.target)){
             initState();
         }
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        if(init === true) {
+            initState();
+        }
+    }, [init])
     
     return (
-        <div onClick={checkFocusNavbar}>
+        <div onClick={checkFocusNavbar} ref={ref}>
             <NavBarBox searchBtn={searchBtn}>
                 <Header>
                     <Link to={"/"}>
@@ -60,7 +66,9 @@ const NavBar = () => {
                     <NavbarMenuContentComponent iconProp={<FiSend />} text={"메시지"}/>
                     <NavbarMenuContentComponent onClick={initState} iconProp={<FiHeart />} text={"알림"}/>
                     <NavbarMenuContentComponent iconProp={<FiPlusSquare />} text={"만들기"}/>
-                    <NavbarMenuContentComponent iconProp={<img src={`${instaProfile}`} alt='profile'/>} text={"프로필"}/>
+                    <Link to={"/b.__.omi"}>
+                        <NavbarMenuContentComponent iconProp={<img src={`${instaProfile}`} alt='profile'/>} text={"프로필"}/>
+                    </Link>
                 </Menu>
                 <More searchBtn={searchBtn}>
                     <HiOutlineMenu/>
@@ -70,6 +78,6 @@ const NavBar = () => {
             <SearchBar ref={searchBarRef} searchBtn={searchBtn}/>
         </div>
     )
-}
+})
 
 export default NavBar
