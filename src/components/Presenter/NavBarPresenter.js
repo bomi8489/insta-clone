@@ -96,9 +96,6 @@ width: 100%;
 > a:first-child > div > div {
     font-weight: bold;
 }
-/* div:first-child > div {
-    font-weight: bold;
-} */
 
 > a > div {
     width: ${props => (props.searchBtn === true) ? '24px' : '287px'};

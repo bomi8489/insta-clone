@@ -21,7 +21,7 @@ function Home() {
 
   return (
     <HomeBox onClick={onClickHomeBox}>
-        <NavBar init={init} ref={navBarRef}/>
+        <NavBar init={init} ref={navBarRef} />
         <Main ref={mainRef} />
     </HomeBox>
   )
