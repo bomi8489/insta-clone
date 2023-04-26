@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState, useEffect, forwardRef } from 'react';
+import React, { useRef, useState, useEffect, forwardRef } from 'react';
 import instagram from '../../image/instagram.png';
 import instaProfile from '../../image/insta-default-profile2.png';
 import {
@@ -32,21 +32,18 @@ const NavBar = forwardRef(({init}, ref) => {
     const onSearch = () => {
         setSearchBtn(prev => !prev);
     }
-    
-    const checkFocusNavbar = useCallback((e) => {
-        if(!searchBarRef.current.contains(e.target) && !searchBtnRef.current.contains(e.target)){
-            initState();
-        }
-    }, []);
 
     useEffect(() => {
         if(init === true) {
             initState();
         }
     }, [init])
+
+    useEffect(() => {
+    }, [searchBtn])
     
     return (
-        <div onClick={checkFocusNavbar} ref={ref}>
+        <div ref={ref}>
             <NavBarBox searchBtn={searchBtn}>
                 <Header>
                     <Link to={"/"}>

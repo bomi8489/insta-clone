@@ -1,4 +1,4 @@
-import React, {useRef, useState, useCallback} from 'react'
+import React, {useRef, useState, useCallback } from 'react'
 import NavBar from '../components/Container/NavBar'
 import Main from '../components/Container/Main'
 import styled from 'styled-components'
