@@ -109,6 +109,26 @@ const ProfileFooter = styled.div`
 }
 `
 
+const ProfileFooterContentsBox = styled.div`
+display: flex;
+flex-direction: column;
+> div {
+    display: flex;
+    justify-content: center;
+    > li {
+        list-style: none;
+        margin: 0 8px 12px 8px;
+        font-size: 14px;
+        opacity: 0.6;
+    }
+}
+
+> div:first-child {
+    margin-top: 24px;
+}
+
+`
+
 export {
     ProfilePage,
     ProfileBox,
@@ -119,4 +139,5 @@ export {
     ProfileNavComponent,
     ProfileContent,
     ProfileContenOutline,
+    ProfileFooterContentsBox,
 }

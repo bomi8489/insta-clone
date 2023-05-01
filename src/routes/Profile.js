@@ -7,11 +7,12 @@ import {
     ProfileContent,
     ProfileContentsBox,
     ProfileFooter,
+    ProfileFooterContentsBox,
     ProfileHeader,
     ProfilePage,
 } from '../components/Presenter/ProfilePresenter';
 import ProfileNavBar from '../components/Container/ProfileNavBar';
-import {CiCamera} from 'react-icons/ci'
+import {CiCamera} from 'react-icons/ci';
 
 function Profile() {
     const [init, setInit] = useState(false);
@@ -50,9 +51,18 @@ function Profile() {
                 </ProfileContentsBox>
                 <ProfileFooter>
                     <div>
-                        <div>
-                            
-                        </div>
+                        <ProfileFooterContentsBox>
+                            <div>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                            </div>
+                            <div>
+                                <li>2</li>
+                                <li>2</li>
+                            </div>
+                        </ProfileFooterContentsBox>
                     </div>
                 </ProfileFooter>
             </ProfileBox>
