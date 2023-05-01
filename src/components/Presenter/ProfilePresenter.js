@@ -57,18 +57,53 @@ width: 57px;
 font-size: 13px;
 font-weight: bold;
 opacity: ${props => props.check ? 1.0 : 0.5};
-/* :first-child {
-    opacity: 1.0;
-    border-top: solid 1px black;
-} */
 border-top: ${props => props.check ? 'solid 1px black' : 'solid 1px none'};
+margin-top: ${props => props.check ? '-1px' : '0px'};
 &:hover {
     cursor: pointer;
+}
+
+> svg {
+    height: 13px;
+    width: 13px;
 }
 `
 
 const ProfileContent = styled.div`
 height: 308px;
+display: flex;
+justify-content: center;
+`
+
+const ProfileContenOutline = styled.div`
+display: flex;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 188px;
+width: 298px;
+margin: 60px 44px;
+
+> div:nth-child(2) {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 24px 0;
+}
+
+> div:nth-child(3) {
+    font-size: 13px;
+    margin-bottom: 24px;
+}
+
+> div:nth-child(4) {
+    color: #4193EF;
+    font-size: 13px;
+    font-weight: bold;
+    &:hover {
+        cursor: pointer;
+    }
+}
 `
 
 export {
@@ -80,4 +115,5 @@ export {
     PrifileNavBox,
     ProfileNavComponent,
     ProfileContent,
+    ProfileContenOutline,
 }
