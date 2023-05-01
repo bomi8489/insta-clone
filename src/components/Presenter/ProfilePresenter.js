@@ -32,10 +32,13 @@ margin-bottom: 44px;
 const PrifileNavBox = styled.div`
 height: 52px;
 border-top: solid 1px #DBDBDB;
-display: flex;
-justify-content: center;
-> li {
-    margin-right: 60px;
+> div:first-child {
+    display: flex;
+    justify-content: center;
+    >li {
+        margin-right: 35px;
+        margin-left: 30px;
+    }
 }
 
 > li:last-child {
@@ -66,7 +69,6 @@ margin-top: ${props => props.check ? '-1px' : '0px'};
 `
 
 const ProfileContent = styled.div`
-height: 308px;
 display: flex;
 justify-content: center;
 `
@@ -77,7 +79,6 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-height: 188px;
 width: 298px;
 margin: 60px 44px;
 

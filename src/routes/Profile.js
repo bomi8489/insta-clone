@@ -3,8 +3,6 @@ import NavBar from '../components/Container/NavBar';
 import { 
     PrifileNavBox,
     ProfileBox,
-    ProfileContenOutline,
-    ProfileContent,
     ProfileContentsBox,
     ProfileFooter,
     ProfileFooterContentsBox,
@@ -12,7 +10,6 @@ import {
     ProfilePage,
 } from '../components/Presenter/ProfilePresenter';
 import ProfileNavBar from '../components/Container/ProfileNavBar';
-import {CiCamera} from 'react-icons/ci';
 
 function Profile() {
     const [init, setInit] = useState(false);
@@ -39,14 +36,6 @@ function Profile() {
                         <PrifileNavBox>
                             <ProfileNavBar />
                         </PrifileNavBox>
-                        <ProfileContent>
-                            <ProfileContenOutline>
-                                <div><CiCamera size={62}/></div>
-                                <div>사진 공유</div>
-                                <div>사진을 공유하면 회원님의 프로필에 표시됩니다.</div>
-                                <div>첫 사진 공유하기</div>
-                            </ProfileContenOutline>
-                        </ProfileContent>
                     </div>
                 </ProfileContentsBox>
                 <ProfileFooter>

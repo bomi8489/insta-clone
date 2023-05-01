@@ -1,35 +1,42 @@
 import React, { useState } from 'react';
-import { ProfileNavComponent } from '../Presenter/ProfilePresenter';
+import { 
+    ProfileContenOutline, 
+    ProfileContent, 
+    ProfileNavComponent, 
+} from '../Presenter/ProfilePresenter';
 import {GrGrid} from 'react-icons/gr';
 import {RiBookmarkLine} from 'react-icons/ri';
-import {MdOutlinePersonPin} from 'react-icons/md'
+import {MdOutlinePersonPin} from 'react-icons/md';
+import {CiCamera} from 'react-icons/ci';
 
 function ProfileNavBar() {
-    const [checkPost, setCheckPost] = useState(true);
-    const [checkSaved, setCheckSaved] = useState(false);
-    const [checkTaged, setCheckTaged] = useState(false);
+    const [check, setCheck] = useState([true, false, false]);
     
     const onNavClick = (e) => {
         if(e.target.attributes.value.value === '게시물') {
-            setCheckPost(true);
-            setCheckSaved(false);
-            setCheckTaged(false);
+            setCheck([true, false, false]);
         } else if(e.target.attributes.value.value === '저장') {
-            setCheckPost(false);
-            setCheckSaved(true);
-            setCheckTaged(false);
+            setCheck([false, true, false]);
         } else if(e.target.attributes.value.value === '태그') {
-            setCheckPost(false);
-            setCheckSaved(false);
-            setCheckTaged(true);
+            setCheck([false, false, true]);
         }
     }
 
     return (
         <>
-            <ProfileNavComponent onClick={onNavClick} check={checkPost} value='게시물'><GrGrid />&nbsp;게시물</ProfileNavComponent>
-            <ProfileNavComponent onClick={onNavClick} check={checkSaved} value='저장'><RiBookmarkLine />&nbsp;저장됨</ProfileNavComponent>
-            <ProfileNavComponent onClick={onNavClick} check={checkTaged} value='태그'><MdOutlinePersonPin />&nbsp;태그됨</ProfileNavComponent>
+            <div>
+                <ProfileNavComponent onClick={onNavClick} check={check[0]} value='게시물'><GrGrid />&nbsp;게시물</ProfileNavComponent>
+                <ProfileNavComponent onClick={onNavClick} check={check[1]} value='저장'><RiBookmarkLine />&nbsp;저장됨</ProfileNavComponent>
+                <ProfileNavComponent onClick={onNavClick} check={check[2]} value='태그'><MdOutlinePersonPin />&nbsp;태그됨</ProfileNavComponent>
+            </div>
+            <ProfileContent>
+                {check[0] && <ProfileContenOutline>
+                    <div><CiCamera size={62}/></div>
+                    <div>사진 공유</div>
+                    <div>사진을 공유하면 회원님의 프로필에 표시됩니다.</div>
+                    <div>첫 사진 공유하기</div>
+                </ProfileContenOutline>}
+            </ProfileContent>
         </>
     )
 }
