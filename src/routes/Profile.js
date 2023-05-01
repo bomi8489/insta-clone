@@ -10,6 +10,8 @@ import {
     ProfilePage,
 } from '../components/Presenter/ProfilePresenter';
 import ProfileNavBar from '../components/Container/ProfileNavBar';
+import ProfileFooterList from '../components/Container/ProfileFooterList';
+import {BsChevronDown} from 'react-icons/bs'
 
 function Profile() {
     const [init, setInit] = useState(false);
@@ -42,14 +44,11 @@ function Profile() {
                     <div>
                         <ProfileFooterContentsBox>
                             <div>
-                                <li>1</li>
-                                <li>1</li>
-                                <li>1</li>
-                                <li>1</li>
+                                <ProfileFooterList />
                             </div>
                             <div>
-                                <li>2</li>
-                                <li>2</li>
+                                <li>한국어 <BsChevronDown /></li>
+                                <li>© 2023 Instagram from Meta</li>
                             </div>
                         </ProfileFooterContentsBox>
                     </div>

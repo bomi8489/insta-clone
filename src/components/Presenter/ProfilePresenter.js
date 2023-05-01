@@ -82,6 +82,12 @@ justify-content: center;
 width: 298px;
 margin: 60px 44px;
 
+> div:first-child {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 > div:nth-child(2) {
     font-size: 30px;
     font-weight: bold;
@@ -119,7 +125,7 @@ flex-direction: column;
     > li {
         list-style: none;
         margin: 0 8px 12px 8px;
-        font-size: 14px;
+        font-size: 12px;
         opacity: 0.6;
     }
 }
@@ -127,7 +133,13 @@ flex-direction: column;
 > div:first-child {
     margin-top: 24px;
 }
+`
 
+const FooterList = styled.li`
+&:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
 `
 
 export {
@@ -141,4 +153,5 @@ export {
     ProfileContent,
     ProfileContenOutline,
     ProfileFooterContentsBox,
+    FooterList,
 }
