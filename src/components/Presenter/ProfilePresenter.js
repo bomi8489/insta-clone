@@ -56,7 +56,12 @@ height: 51px;
 width: 57px;
 font-size: 13px;
 font-weight: bold;
-opacity: 0.5;
+opacity: ${props => props.check ? 1.0 : 0.5};
+/* :first-child {
+    opacity: 1.0;
+    border-top: solid 1px black;
+} */
+border-top: ${props => props.check ? 'solid 1px black' : 'solid 1px none'};
 &:hover {
     cursor: pointer;
 }

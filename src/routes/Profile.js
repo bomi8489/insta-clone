@@ -14,7 +14,7 @@ import ProfileNavBar from '../components/Container/ProfileNavBar';
 function Profile() {
     const [init, setInit] = useState(false);
     const navBarRef = useRef();
-
+    
     const onClickHomeBox = useCallback((e) => {
         if(navBarRef.current.contains(e.target)){
             setInit(false);
@@ -35,9 +35,6 @@ function Profile() {
                         </ProfileHeader>
                         <PrifileNavBox>
                             <ProfileNavBar />
-                            {/* <ProfileNavComponent>게시물</ProfileNavComponent>
-                            <ProfileNavComponent>저장됨</ProfileNavComponent>
-                            <ProfileNavComponent>태그됨</ProfileNavComponent> */}
                         </PrifileNavBox>
                         <ProfileContent>3</ProfileContent>
                     </div>
