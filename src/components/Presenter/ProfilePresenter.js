@@ -24,10 +24,6 @@ height: 835px;
 }
 `
 
-const ProfileFooter = styled.div`
-height: 134px;
-`
-
 const ProfileHeader = styled.div`
 height: 150px;
 margin-bottom: 44px;
@@ -103,6 +99,13 @@ margin: 60px 44px;
     &:hover {
         cursor: pointer;
     }
+}
+`
+    
+const ProfileFooter = styled.div`
+> div {
+    height: 134px;
+    padding: 0 16px;
 }
 `
 

@@ -48,7 +48,13 @@ function Profile() {
                         </ProfileContent>
                     </div>
                 </ProfileContentsBox>
-                <ProfileFooter></ProfileFooter>
+                <ProfileFooter>
+                    <div>
+                        <div>
+                            
+                        </div>
+                    </div>
+                </ProfileFooter>
             </ProfileBox>
         </ProfilePage>
     )

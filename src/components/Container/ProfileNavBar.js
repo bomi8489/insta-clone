@@ -10,15 +10,15 @@ function ProfileNavBar() {
     const [checkTaged, setCheckTaged] = useState(false);
     
     const onNavClick = (e) => {
-        if(e.target.__reactProps$svl3ugr56k.value === '게시물') {
+        if(e.target.attributes.value.value === '게시물') {
             setCheckPost(true);
             setCheckSaved(false);
             setCheckTaged(false);
-        } else if(e.target.__reactProps$svl3ugr56k.value === '저장') {
+        } else if(e.target.attributes.value.value === '저장') {
             setCheckPost(false);
             setCheckSaved(true);
             setCheckTaged(false);
-        } else if(e.target.__reactProps$svl3ugr56k.value === '태그') {
+        } else if(e.target.attributes.value.value === '태그') {
             setCheckPost(false);
             setCheckSaved(false);
             setCheckTaged(true);
