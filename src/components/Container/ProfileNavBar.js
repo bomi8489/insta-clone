@@ -4,6 +4,7 @@ import {
     ProfileContent, 
     ProfileNavComponent, 
 } from '../Presenter/ProfilePresenter';
+import userImage from '../../image/user.png'
 import {GrGrid} from 'react-icons/gr';
 import {RiBookmarkLine} from 'react-icons/ri';
 import {MdOutlinePersonPin} from 'react-icons/md';
@@ -29,12 +30,22 @@ function ProfileNavBar() {
                 <ProfileNavComponent onClick={onNavClick} check={check[2]} value='태그'><MdOutlinePersonPin />&nbsp;태그됨</ProfileNavComponent>
             </div>
             <ProfileContent>
-                {check[0] && <ProfileContenOutline>
+                {check[0] && 
+                <ProfileContenOutline>
                     <div><CiCamera size={62}/></div>
                     <div>사진 공유</div>
                     <div>사진을 공유하면 회원님의 프로필에 표시됩니다.</div>
                     <div>첫 사진 공유하기</div>
-                </ProfileContenOutline>}
+                </ProfileContenOutline>
+                }
+                {check[1]}
+                {check[2] &&
+                <ProfileContenOutline>
+                    <div><img src={`${userImage}`} alt='userImage'/></div>
+                    <div>내가 나온 사진</div>
+                    <div>사람들이 회원님을 사진에 태그하면 태그된 사진이 여기에 표시됩니다.</div>
+                </ProfileContenOutline>
+                }
             </ProfileContent>
         </>
     )

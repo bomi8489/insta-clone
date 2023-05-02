@@ -156,16 +156,17 @@ justify-content: center;
 
 const ProfileContenOutline = styled.div`
 display: flex;
-display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: center;
-width: 298px;
+text-align: center;
+max-width: 350px;
 margin: 60px 44px;
 
 > div:first-child {
-    &:hover {
-        cursor: pointer;
+    svg {
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
