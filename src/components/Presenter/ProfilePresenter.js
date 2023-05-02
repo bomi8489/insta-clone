@@ -132,7 +132,6 @@ list-style: none;
 display: flex;
 justify-content: center;
 align-items: center;
-height: 51px;
 width: 57px;
 font-size: 13px;
 font-weight: bold;
@@ -146,6 +145,13 @@ margin-top: ${props => props.check ? '-1px' : '0px'};
 > svg {
     height: 13px;
     width: 13px;
+}
+
+> div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 51px;
 }
 `
 

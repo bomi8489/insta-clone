@@ -26,9 +26,9 @@ function ProfileNavBar() {
     return (
         <>
             <div>
-                <ProfileNavComponent onClick={onNavClick} check={check[0]} value='게시물'><GrGrid />&nbsp;게시물</ProfileNavComponent>
-                <ProfileNavComponent onClick={onNavClick} check={check[1]} value='저장'><RiBookmarkLine />&nbsp;저장됨</ProfileNavComponent>
-                <ProfileNavComponent onClick={onNavClick} check={check[2]} value='태그'><MdOutlinePersonPin />&nbsp;태그됨</ProfileNavComponent>
+                <ProfileNavComponent check={check[0]}><GrGrid /><div onClick={onNavClick} value='게시물'>&nbsp;게시물</div></ProfileNavComponent>
+                <ProfileNavComponent check={check[1]}><RiBookmarkLine /><div onClick={onNavClick} value='저장'>&nbsp;저장됨</div></ProfileNavComponent>
+                <ProfileNavComponent check={check[2]}><MdOutlinePersonPin /><div onClick={onNavClick} value='태그'>&nbsp;태그됨</div></ProfileNavComponent>
             </div>
             <ProfileContent>
                 {check[0] && 
