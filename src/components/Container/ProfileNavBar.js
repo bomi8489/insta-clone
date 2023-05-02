@@ -11,7 +11,6 @@ import {CiCamera} from 'react-icons/ci';
 
 function ProfileNavBar() {
     const [check, setCheck] = useState([true, false, false]);
-    
     const onNavClick = (e) => {
         if(e.target.attributes.value.value === '게시물') {
             setCheck([true, false, false]);

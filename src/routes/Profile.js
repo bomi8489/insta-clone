@@ -7,11 +7,14 @@ import {
     ProfileFooter,
     ProfileFooterContentsBox,
     ProfileHeader,
+    ProfileHeaderContents,
     ProfilePage,
 } from '../components/Presenter/ProfilePresenter';
+import instaProfile from '../image/insta-default-profile2.png';
 import ProfileNavBar from '../components/Container/ProfileNavBar';
 import ProfileFooterList from '../components/Container/ProfileFooterList';
-import {BsChevronDown} from 'react-icons/bs'
+import {BsChevronDown} from 'react-icons/bs';
+import {BsGearWide} from 'react-icons/bs';
 
 function Profile() {
     const [init, setInit] = useState(false);
@@ -32,8 +35,22 @@ function Profile() {
                 <ProfileContentsBox>
                     <div>
                         <ProfileHeader>
-                            <div></div>
-                            <div></div>
+                            <div>
+                                <img src={`${instaProfile}`} alt='profile'/>
+                            </div>
+                            <ProfileHeaderContents>
+                                <div>
+                                    <div>b.__.omi</div>
+                                    <div>프로필 편집</div>
+                                    <div><BsGearWide size={24}/></div>
+                                </div>
+                                <div>
+                                    <div>게시물 <span>0</span></div>
+                                    <div>팔로우 <span>1</span></div>
+                                    <div>팔로워 <span>1</span></div>
+                                </div>
+                                <div>권기범</div>
+                            </ProfileHeaderContents>
                         </ProfileHeader>
                         <PrifileNavBox>
                             <ProfileNavBar />

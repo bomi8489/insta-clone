@@ -27,6 +27,87 @@ height: 835px;
 const ProfileHeader = styled.div`
 height: 150px;
 margin-bottom: 44px;
+display: flex;
+justify-content: center;
+> div:first-child{
+    margin: auto;
+    > img {
+        height: 150px;
+        width: 150px;
+    }
+}
+img {
+    height: 150px;
+    width: 150px;
+}
+`
+
+const ProfileHeaderContents = styled.div`
+display: flex;
+flex-direction: column;
+width: 613px;
+
+> div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+> div:first-child {
+    > div:first-child {
+        font-size: 20px;
+    }
+    > div:nth-child(2) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        width: 106px;
+        height: 32px;
+        margin-left: 20px;
+        font-weight: bold;
+        background-color: #EFEFEF;
+        border-radius: 10px;
+        &:hover {
+            background-color: #DBDBDB;
+            cursor: pointer;
+        }
+    }
+    > div:last-child {
+        margin-left: 5px;
+        > svg {
+            padding: 8px;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+> div:nth-child(2){
+    > div {
+        margin-right: 40px;
+        > span {
+            font-weight: bold;
+        }
+    }
+    > div:nth-child(2) {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    > div:nth-child(3) {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+> div:last-child {
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 14px;
+}
 `
 
 const PrifileNavBox = styled.div`
@@ -148,6 +229,7 @@ export {
     ProfileContentsBox,
     ProfileFooter,
     ProfileHeader,
+    ProfileHeaderContents,
     PrifileNavBox,
     ProfileNavComponent,
     ProfileContent,
