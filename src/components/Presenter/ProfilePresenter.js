@@ -186,8 +186,56 @@ margin: 60px 44px;
     font-size: 13px;
     font-weight: bold;
     &:hover {
+        color: black;
         cursor: pointer;
     }
+}
+`
+
+const ProfileSavedContents = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+> div {
+    display: flex;
+    width: 935px;
+}
+
+> div:first-child {
+    margin: 32px 0 16px 0;
+    justify-content: space-between;
+    > div:first-child {
+        font-size: 12px;
+        opacity: 0.7;
+    }
+    > div:last-child {
+        color: #4193EF;
+        font-size: 14px;
+        font-weight: bold;
+        &:hover {
+            color: black;
+            cursor: pointer;
+        }
+    }
+}
+
+> div:last-child {
+    flex-direction: column-reverse;
+    background: linear-gradient(to top, #838383, white);
+    height: 300px;
+    width: 300px;
+    border: solid 1px #DBDBDB;
+    > div {
+        padding: 20px 20px 15px 20px;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+    }
+
+&:hover {
+    opacity: 0.3;
+    cursor: pointer;
+}
 }
 `
     
@@ -228,6 +276,7 @@ export {
     ProfilePage,
     ProfileBox,
     ProfileContentsBox,
+    ProfileSavedContents,
     ProfileFooter,
     ProfileHeader,
     ProfileHeaderContents,

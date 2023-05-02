@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { 
     ProfileContenOutline, 
     ProfileContent, 
-    ProfileNavComponent, 
+    ProfileNavComponent,
+    ProfileSavedContents, 
 } from '../Presenter/ProfilePresenter';
 import userImage from '../../image/user.png'
 import {GrGrid} from 'react-icons/gr';
@@ -38,7 +39,15 @@ function ProfileNavBar() {
                     <div>첫 사진 공유하기</div>
                 </ProfileContenOutline>
                 }
-                {check[1]}
+                {check[1] && 
+                <ProfileSavedContents>
+                    <div>
+                        <div>저장한 내용은 회원님만 볼 수 있습니다</div>
+                        <div>+ 새 컬렉션</div>
+                    </div>
+                    <div><div>모든 게시물</div></div>
+                </ProfileSavedContents>
+                }
                 {check[2] &&
                 <ProfileContenOutline>
                     <div><img src={`${userImage}`} alt='userImage'/></div>
