@@ -278,6 +278,42 @@ const FooterList = styled.li`
 }
 `
 
+const ModalBox = styled.div`
+height: 100vh;
+width: 100vw;
+background-color: #595959;
+position: fixed;
+left: 0;
+top: 0;
+z-index: 999;
+background-color: rgba(0, 0, 0, 0.6);
+> div {
+    position: fixed;
+    left: 39%;
+    top: 33%;
+    background-color: white;
+    height: 336px;
+    width: 400px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    > div {
+        height: 48px;
+        font-size: 14px;
+        border-bottom: solid 1px #DBDBDB;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    > div:last-child {
+        border-bottom: none;
+    }
+}
+`
+
 export {
     ProfilePage,
     ProfileBox,
@@ -292,4 +328,5 @@ export {
     ProfileContenOutline,
     ProfileFooterContentsBox,
     FooterList,
+    ModalBox,
 }
