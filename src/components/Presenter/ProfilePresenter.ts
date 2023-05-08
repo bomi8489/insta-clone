@@ -127,7 +127,7 @@ border-top: solid 1px #DBDBDB;
 }
 `
 
-const ProfileNavComponent = styled.li`
+const ProfileNavComponent = styled.li<{ check: boolean }>`
 list-style: none;
 display: flex;
 justify-content: center;
@@ -244,7 +244,7 @@ align-items: center;
 }
 }
 `
-    
+
 const ProfileFooter = styled.div`
 > div {
     height: 134px;

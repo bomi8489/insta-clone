@@ -122,7 +122,7 @@ display: flex;
 flex-direction: column;
 `
 
-const IconsContainer = styled.div`
+const IconsContainer = styled.div<{ likeBtn: boolean }>`
 height: 40px;
 margin-top: 4px;
 padding-bottom: 6px;
@@ -150,7 +150,7 @@ display: flex;
 > div:first-child {
     svg {
         &:hover {
-            opacity: ${props => props.likeBtn? '1' : '0.5'};
+            opacity: ${props => props.likeBtn ? '1' : '0.5'};
         }
     }
 }

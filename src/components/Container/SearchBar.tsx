@@ -1,19 +1,25 @@
 import React, { forwardRef, useEffect, useRef, useState } from 'react'
-import { 
+import {
     SearchBarBox,
     SearchContents,
     SearchBox,
     SearchingInput,
     SearchResult,
     Search,
- } from '../Presenter/NavBarPresenter';
-import {IoIosCloseCircle} from 'react-icons/io'
+} from '../Presenter/NavBarPresenter';
+import { IoIosCloseCircle } from 'react-icons/io'
 
-const SearchBar = forwardRef(({searchBtn}, ref) => {
+interface SearchBarProps {
+    searchBtn: boolean;
+}
+
+type Ref = HTMLDivElement;
+
+const SearchBar = forwardRef<Ref, SearchBarProps>(({ searchBtn }, ref) => {
     const [searchText, setSearchText] = useState("");
-    const inputRef = useRef();
+    const inputRef = useRef<HTMLInputElement>(null);
 
-    const onChange = (e) => {
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchText(e.target.value);
     }
     const onClickX = () => {
@@ -21,8 +27,8 @@ const SearchBar = forwardRef(({searchBtn}, ref) => {
     }
 
     useEffect(() => {
-        if(searchBtn === true) {
-            inputRef.current.focus();
+        if (searchBtn === true) {
+            inputRef.current!.focus();
         }
     }, [searchBtn]);
 
@@ -33,14 +39,14 @@ const SearchBar = forwardRef(({searchBtn}, ref) => {
                 <SearchBox>
                     <SearchingInput>
                         <div>
-                            <Search 
-                                placeholder='검색' 
-                                value={searchText} 
+                            <Search
+                                placeholder='검색'
+                                value={searchText}
                                 onChange={onChange}
                                 onClick={onClickX}
                                 ref={inputRef}
                             />
-                            <IoIosCloseCircle onClick={onClickX}/>
+                            <IoIosCloseCircle onClick={onClickX} />
                         </div>
                     </SearchingInput>
                     <SearchResult>

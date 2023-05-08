@@ -1,4 +1,4 @@
-import React, {useRef, useState, useCallback } from 'react'
+import React, { useRef, useState, useCallback } from 'react'
 import NavBar from '../components/Container/NavBar'
 import Main from '../components/Container/Main'
 import styled from 'styled-components'
@@ -8,11 +8,11 @@ const HomeBox = styled.div`
 
 function Home() {
   const [init, setInit] = useState(false);
-  const navBarRef = useRef();
-  const mainRef = useRef();
+  const navBarRef = useRef<HTMLDivElement>(null);
+  const mainRef = useRef<HTMLDivElement>(null);
 
-  const onClickHomeBox = useCallback((e) => {
-    if(navBarRef.current.contains(e.target)){
+  const onClickHomeBox = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (navBarRef.current!.contains((e.target as HTMLInputElement))) {
       setInit(false);
     } else {
       setInit(true);
@@ -21,8 +21,8 @@ function Home() {
 
   return (
     <HomeBox onClick={onClickHomeBox}>
-        <NavBar init={init} ref={navBarRef} />
-        <Main ref={mainRef} />
+      <NavBar init={init} ref={navBarRef} />
+      <Main ref={mainRef} />
     </HomeBox>
   )
 }

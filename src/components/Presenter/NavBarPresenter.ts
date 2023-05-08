@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const NavBarBox = styled.div`
+const NavBarBox = styled.div<{ searchBtn: boolean }>`
 background-color: white;
 position: fixed;
 height: 100vh;
@@ -35,9 +35,7 @@ margin-top: 20px;
 }
 `
 
-const ImageBox = styled.div`
-/* height: ${props => (props.searchBtn === true) ? '32px' : '32px'};
-padding: ${props => (props.searchBtn === true) ? '12px' : '12px'}; */
+const ImageBox = styled.div<{ searchBtn: boolean }>`
 height: 32px;
 padding: 12px;
 width: ${props => (props.searchBtn === true) ? '24px' : '287px'};
@@ -90,7 +88,7 @@ img {
 }
 `
 
-const Menu = styled.div`
+const Menu = styled.div<{ searchBtn: boolean }>`
 height: 800px;
 width: 100%;
 > a:first-child > div > div {
@@ -111,7 +109,7 @@ width: 100%;
 }
 `
 
-const MenuContents = styled.div`
+const MenuContents = styled.div<{ searchBtn: boolean }>`
 height: 24px;
 width: 287px;
 display: flex;
@@ -153,7 +151,7 @@ border: ${props => (props.searchBtn === true) ? 'solid 1px #DBDBDB' : 'none'};
 }
 `
 
-const More = styled.div`
+const More = styled.div<{ searchBtn: boolean }>`
 height: 24px;
 width: ${props => (props.searchBtn === true) ? '24px' : '287px'};
 display: flex;
@@ -192,10 +190,10 @@ border-radius: 10px;
 }
 `
 
-const SearchBarBox = styled.div`
-transition: ${props => (props.searchBtn === true) ? '0.5s ease' : '1.5s ease'};
+const SearchBarBox = styled.div<{ searchBtn: boolean }>`
+transition: ${props => props.searchBtn ? '0.5s ease' : '1.5s ease'};
 position: fixed;
-left: ${props => (props.searchBtn === true) ? '73px' : '-397px'};
+left: ${props => props.searchBtn ? '73px' : '-397px'};
 height: 100%;
 width: 396px;
 background-color: white;
@@ -288,4 +286,4 @@ font-size: 17px;
 }
 `
 
-export {NavBarBox, Header, Menu, More, ImageBox, MenuContents, SearchBarBox, SearchContents, SearchBox, SearchingInput, SearchResult, Search, };
+export { NavBarBox, Header, Menu, More, ImageBox, MenuContents, SearchBarBox, SearchContents, SearchBox, SearchingInput, SearchResult, Search, };

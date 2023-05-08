@@ -1,9 +1,9 @@
 import Home from "./routes/Home";
 import './App.css'
-import { 
+import {
   HashRouter as Router,
-  Route, 
-  Routes 
+  Route,
+  Routes
 } from "react-router-dom";
 import Profile from "./routes/Profile";
 
