@@ -28,7 +28,7 @@ const SearchBar = forwardRef<Ref, SearchBarProps>(({ searchBtn }, ref) => {
 
     useEffect(() => {
         if (searchBtn === true) {
-            inputRef.current!.focus();
+            inputRef.current?.focus();
         }
     }, [searchBtn]);
 

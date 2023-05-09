@@ -12,7 +12,7 @@ function Home() {
   const mainRef = useRef<HTMLDivElement>(null);
 
   const onClickHomeBox = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    if (navBarRef.current!.contains((e.target as HTMLInputElement))) {
+    if (navBarRef.current?.contains((e.target as HTMLInputElement))) {
       setInit(false);
     } else {
       setInit(true);

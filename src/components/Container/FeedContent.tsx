@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { 
-    Feed, 
-    FeedFooter, 
-    FeedHeader, 
+import {
+    Feed,
+    FeedFooter,
+    FeedHeader,
     PictureAndNickname,
     UserName,
     UploadTime,
@@ -15,17 +15,23 @@ import {
     MoreComment,
     WriteComment,
 } from '../Presenter/MainContentsPresenter';
-import {RxDotsHorizontal} from 'react-icons/rx';
-import {FiSend} from 'react-icons/fi';
-import {FaRegComment} from 'react-icons/fa';
-import {RiBookmarkLine} from 'react-icons/ri';
+import { RxDotsHorizontal } from 'react-icons/rx';
+import { FiSend } from 'react-icons/fi';
+import { FaRegComment } from 'react-icons/fa';
+import { RiBookmarkLine } from 'react-icons/ri';
 import instaProfile from '../../image/insta-default-profile2.png';
 import Comment from './Comment';
 import FeedLikeBtn from './FeedLikeBtn';
 import FeedPhoto from './FeedPhoto';
 import WriteComponent from './WriteComponent';
 
-const FeedContent = ({user, testComments, picture}) => {
+interface FeedContentProps {
+    user: string[];
+    testComments: string[][];
+    picture: string[];
+}
+
+const FeedContent = ({ user, testComments, picture }: FeedContentProps) => {
     const [likeBtn, setLikeBtn] = useState(false);
 
     const onLikeClick = () => {
@@ -36,7 +42,7 @@ const FeedContent = ({user, testComments, picture}) => {
         <Feed>
             <FeedHeader>
                 <PictureAndNickname>
-                    <img src={`${instaProfile}`} alt='profile'/>
+                    <img src={`${instaProfile}`} alt='profile' />
                     <UserName>{user[0]}&nbsp;</UserName>
                     <UploadTime>&nbsp;{user[1]}</UploadTime>
                 </PictureAndNickname>
@@ -45,12 +51,12 @@ const FeedContent = ({user, testComments, picture}) => {
                 </div>
             </FeedHeader>
             <FeedPicture>
-                <FeedPhoto picture={picture}/>
+                <FeedPhoto picture={picture} />
             </FeedPicture>
             <FeedFooter>
                 <IconsContainer likeBtn={likeBtn}>
-                    <div><FeedLikeBtn likeBtn={likeBtn} onLikeClick={onLikeClick}/></div>
-                    <div><FaRegComment style={{transform: 'scaleX(-1)'}}/></div>
+                    <div><FeedLikeBtn likeBtn={likeBtn} onLikeClick={onLikeClick} /></div>
+                    <div><FaRegComment style={{ transform: 'scaleX(-1)' }} /></div>
                     <div><FiSend /></div>
                     <div><RiBookmarkLine /></div>
                 </IconsContainer>
@@ -65,7 +71,7 @@ const FeedContent = ({user, testComments, picture}) => {
                             idx <= 1
                         )).map((_, idx2) => (
                             <Comments key={idx2}>
-                                <Comment testComments={testComments} idx={idx2}/>
+                                <Comment testComments={testComments} idx={idx2} />
                             </Comments>
                         ))}
                     </CommentBox>

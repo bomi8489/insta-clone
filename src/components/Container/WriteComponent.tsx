@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import {CiFaceSmile} from 'react-icons/ci'
+import { CiFaceSmile } from 'react-icons/ci'
 
 function WriteComponent() {
     const [text, setText] = useState("");
 
-    const onChange = (e) => {
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setText(e.target.value);
     }
 
-    const onSubmit = (e) => {
+    const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log(text);
         setText("");

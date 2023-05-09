@@ -111,9 +111,11 @@ img {
 }
 `
 
-const PictureBox = styled.div`
+const PictureBox = styled.div<{ position: number }>`
 display: flex;
 height: 100%;
+transition: transform 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 0s; 
+transform: translateX(${props => props.position}px);
 `
 
 const FeedFooter = styled.div`

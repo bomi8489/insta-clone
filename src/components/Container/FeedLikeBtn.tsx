@@ -1,8 +1,13 @@
 import React from 'react'
-import {FaHeart, FaRegHeart} from 'react-icons/fa'
+import { FaHeart, FaRegHeart } from 'react-icons/fa'
 
-function FeedLikeBtn({likeBtn, onLikeClick}) {
-    const foucusOutHeart = (e) => {
+interface FeedLikeBtnProps {
+    likeBtn: boolean;
+    onLikeClick: React.MouseEventHandler<HTMLDivElement>;
+}
+
+function FeedLikeBtn({ likeBtn, onLikeClick }: FeedLikeBtnProps) {
+    const foucusOutHeart = (e: React.FocusEvent<HTMLDivElement>) => {
         console.log(e.target.style);
     }
 

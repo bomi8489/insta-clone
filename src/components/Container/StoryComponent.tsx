@@ -1,13 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { 
-    StoryList, 
+import React, { useState } from 'react'
+import {
+    StoryList,
     ListContainer,
     StoryUl,
     LeftBtn,
     RightBtn,
 } from '../Presenter/StoryComponentPresenter'
 import instaProfile from '../../image/insta-default-profile2.png';
-import {AiFillLeftCircle, AiFillRightCircle} from 'react-icons/ai'
+import { AiFillLeftCircle, AiFillRightCircle } from 'react-icons/ai'
 
 const StoryComponent = () => {
     const userArray = [
@@ -20,54 +20,40 @@ const StoryComponent = () => {
     ];
 
     const [position, setPosition] = useState(0);
-    const leftBtnRef = useRef();
-    const rightBtnRef = useRef();
 
     const clickLeftBtn = () => {
-        if(position > -320) {
+        if (position > -320) {
             setPosition(0);
         }
         else setPosition(prev => prev + 320);
     }
 
     const clickRightBtn = () => {
-        if(position <= -640) {
+        if (position <= -640) {
             setPosition(-800)
         }
         else setPosition(prev => prev - 320)
     }
 
-    useEffect(() => {
-        rightBtnRef.current.parentNode.children[2].style = `
-        transition: transform 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 0s; transform: translateX(${position}px);
-        `;
-    },[position])
-
-        useEffect(() => {
-        leftBtnRef.current.parentNode.children[2].style = `
-        transition: transform 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 0s; transform: translateX(${position}px);
-        `;
-    },[position])
-
     return (
         <div>
             <StoryUl>
-                <LeftBtn onClick={clickLeftBtn} ref={leftBtnRef}>
-                    {position !== 0 && 
-                    <AiFillLeftCircle color='white'/>
+                <LeftBtn onClick={clickLeftBtn}>
+                    {position !== 0 &&
+                        <AiFillLeftCircle color='white' />
                     }
                 </LeftBtn>
-                <RightBtn onClick={clickRightBtn} ref={rightBtnRef}>
+                <RightBtn onClick={clickRightBtn}>
                     {position > -800 &&
-                    <AiFillRightCircle color='white'/>
+                        <AiFillRightCircle color='white' />
                     }
                 </RightBtn>
 
-                <ListContainer>
+                <ListContainer position={position}>
                     {userArray && userArray.map((user, idx) => (
                         <StoryList key={idx}>
                             <div>
-                                <img src={`${instaProfile}`} alt='profile'/>
+                                <img src={`${instaProfile}`} alt='profile' />
                                 <div>{user}</div>
                             </div>
                         </StoryList>

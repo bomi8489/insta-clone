@@ -8,9 +8,11 @@ overflow: hidden;
 position: relative;
 `
 
-const ListContainer = styled.div`
+const ListContainer = styled.div<{ position: number }>`
 width: 100%;
 display: flex;
+transition: transform 500ms cubic-bezier(0.215, 0.61, 0.355, 1) 0s; 
+transform: translateX(${props => props.position}px);
 `
 
 const StoryList = styled.li`

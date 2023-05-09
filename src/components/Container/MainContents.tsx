@@ -1,9 +1,8 @@
-import React from 'react'
-import { 
-    FeedBox, 
-    FeedContainer, 
-    MainContentsBox,
-    StoryBox
+import {
+  FeedBox,
+  FeedContainer,
+  MainContentsBox,
+  StoryBox
 } from '../Presenter/MainContentsPresenter'
 import StoryComponent from './StoryComponent'
 import FeedContent from './FeedContent'
@@ -21,7 +20,7 @@ const MainContents = () => {
   ];
 
   const testComments = [
-    ["Kim_Water_Hwan", "사진이 마음에 들어요"], ["Kim_Water_Hwan", "퍼가요"], ["Kim_Water_Hwan", "퍼가요"], ["Kim_Water_Hwan", "싫어요"], ["Kim_Water_Hwan", "김수환바보"], ["Kim_Water_Hwan", "우와"], 
+    ["Kim_Water_Hwan", "사진이 마음에 들어요"], ["Kim_Water_Hwan", "퍼가요"], ["Kim_Water_Hwan", "퍼가요"], ["Kim_Water_Hwan", "싫어요"], ["Kim_Water_Hwan", "김수환바보"], ["Kim_Water_Hwan", "우와"],
   ]
 
   const feedPicture = [
@@ -30,17 +29,17 @@ const MainContents = () => {
 
   return (
     <MainContentsBox>
-        <div></div>
-        <StoryBox>
-          <StoryComponent />
-        </StoryBox>
-        <FeedBox>
-          <FeedContainer>
-            {userPostArray.map((user, idx) => (
-              <FeedContent key={idx} user={user} testComments={testComments} picture={feedPicture}/>
-            ))}
-          </FeedContainer>
-        </FeedBox>
+      <div></div>
+      <StoryBox>
+        <StoryComponent />
+      </StoryBox>
+      <FeedBox>
+        <FeedContainer>
+          {userPostArray.map((user, idx) => (
+            <FeedContent key={idx} user={user} testComments={testComments} picture={feedPicture} />
+          ))}
+        </FeedContainer>
+      </FeedBox>
     </MainContentsBox>
   )
 }
