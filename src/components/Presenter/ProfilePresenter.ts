@@ -127,7 +127,7 @@ border-top: solid 1px #DBDBDB;
 }
 `
 
-const ProfileNavComponent = styled.li<{ check: boolean }>`
+const ProfileNavComponent = styled.li<{ check: ConstrainBoolean }>`
 list-style: none;
 display: flex;
 justify-content: center;
@@ -146,13 +146,17 @@ margin-top: ${props => props.check ? '-1px' : '0px'};
     height: 13px;
     width: 13px;
 }
+`
 
-> div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 51px;
+interface ProfileNavDivBoxProps {
+    value: string;
 }
+
+const ProfileNavDivBox = styled.div<ProfileNavDivBoxProps>`
+display: flex;
+justify-content: center;
+align-items: center;
+height: 51px;
 `
 
 const ProfileContent = styled.div`
@@ -324,6 +328,7 @@ export {
     ProfileHeaderContents,
     PrifileNavBox,
     ProfileNavComponent,
+    ProfileNavDivBox,
     ProfileContent,
     ProfileContenOutline,
     ProfileFooterContentsBox,
