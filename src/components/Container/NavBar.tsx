@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, forwardRef } from 'react';
+import { useRef, useState, useEffect, forwardRef } from 'react';
 import instagram from '../../image/instagram.png';
 import instaProfile from '../../image/insta-default-profile2.png';
 import {
@@ -19,12 +19,7 @@ import { HiOutlineMenu } from 'react-icons/hi';
 import { BsInstagram } from 'react-icons/bs';
 import NavbarMenuContentComponent from './NavbarMenuContentComponent';
 import SearchBar from './SearchBar';
-
-interface NavBarProps {
-    init: boolean;
-}
-
-type Ref = HTMLDivElement;
+import { NavBarProps, Ref } from '../../types';
 
 const NavBar = forwardRef<Ref, NavBarProps>(({ init }, ref) => {
     const [searchBtn, setSearchBtn] = useState(false);

@@ -8,12 +8,7 @@ import {
     Search,
 } from '../Presenter/NavBarPresenter';
 import { IoIosCloseCircle } from 'react-icons/io'
-
-interface SearchBarProps {
-    searchBtn: boolean;
-}
-
-type Ref = HTMLDivElement;
+import { Ref, SearchBarProps } from '../../types';
 
 const SearchBar = forwardRef<Ref, SearchBarProps>(({ searchBtn }, ref) => {
     const [searchText, setSearchText] = useState("");

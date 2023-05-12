@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ProfileNavDivBoxProps } from "../../types";
 
 const ProfilePage = styled.div`
 `
@@ -147,10 +148,6 @@ margin-top: ${props => props.check ? '-1px' : '0px'};
     width: 13px;
 }
 `
-
-interface ProfileNavDivBoxProps {
-    value: string;
-}
 
 const ProfileNavDivBox = styled.div<ProfileNavDivBoxProps>`
 display: flex;

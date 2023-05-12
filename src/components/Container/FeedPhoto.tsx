@@ -2,10 +2,7 @@ import React, { useState } from 'react'
 import { LeftBtn, RightBtn } from '../Presenter/StoryComponentPresenter';
 import { PictureBox } from '../Presenter/MainContentsPresenter';
 import { AiFillLeftCircle, AiFillRightCircle } from 'react-icons/ai'
-
-interface FeedPhotoProps {
-    picture: string[];
-}
+import { FeedPhotoProps } from '../../types';
 
 function FeedPhoto({ picture }: FeedPhotoProps) {
     const [position, setPosition] = useState(0);

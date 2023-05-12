@@ -2,18 +2,13 @@ import React from 'react'
 import {
   MainBox,
   Contents,
-} from '../Presenter/MainPresenter'
-import Sidebar from './Sidebar'
-import MainContents from './MainContents'
-import { forwardRef } from 'react'
+} from '../Presenter/MainPresenter';
+import Sidebar from './Sidebar';
+import MainContents from './MainContents';
+import { forwardRef } from 'react';
+import { Ref } from '../../types';
 
-interface MainProps {
-
-}
-
-type Ref = HTMLDivElement
-
-const Main = forwardRef<Ref, MainProps>((_, ref) => {
+const Main = forwardRef<Ref>((_, ref) => {
   return (
     <MainBox ref={ref}>
       <Contents>

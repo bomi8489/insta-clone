@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import {
     Feed,
     FeedFooter,
@@ -24,12 +24,7 @@ import Comment from './Comment';
 import FeedLikeBtn from './FeedLikeBtn';
 import FeedPhoto from './FeedPhoto';
 import WriteComponent from './WriteComponent';
-
-interface FeedContentProps {
-    user: string[];
-    testComments: string[][];
-    picture: string[];
-}
+import { FeedContentProps } from '../../types';
 
 const FeedContent = ({ user, testComments, picture }: FeedContentProps) => {
     const [likeBtn, setLikeBtn] = useState(false);

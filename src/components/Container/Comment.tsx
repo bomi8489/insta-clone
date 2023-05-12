@@ -1,10 +1,7 @@
 import { useState } from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
+import { CommentProps } from '../../types';
 
-interface CommentProps {
-    testComments: string[][];
-    idx: number;
-}
 
 const Comment = ({ testComments, idx }: CommentProps) => {
     const [commentLikeBtn, setCommentLikeBtn] = useState(false);

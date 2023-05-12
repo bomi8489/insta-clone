@@ -6,7 +6,7 @@ import {
     ProfileNavDivBox,
     ProfileSavedContents,
 } from '../Presenter/ProfilePresenter';
-import userImage from '../../image/user.png'
+import userImage from '../../image/user.png';
 import { GrGrid } from 'react-icons/gr';
 import { RiBookmarkLine } from 'react-icons/ri';
 import { MdOutlinePersonPin } from 'react-icons/md';

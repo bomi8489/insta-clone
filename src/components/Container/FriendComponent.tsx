@@ -7,10 +7,7 @@ import {
     Follow,
 } from '../Presenter/FriendComponentPresenter'
 import instaProfile from '../../image/insta-default-profile2.png';
-
-interface FriendComponentProps {
-    nickname: String;
-}
+import { FriendComponentProps } from '../../types';
 
 const FriendComponent = ({ nickname }: FriendComponentProps) => {
     return (
